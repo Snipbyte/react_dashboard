@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./Components/Header";
+import Jumbotron from "./Components/Jumbotron";
+import LineChart from "./Components/Chart";
+import Cards from "./Components/Cards";
+import HorizentalGraph from "./Components/HorizentalGraph";
+import VerticalGraph from "./Components/VerticalGraph";
+import Sidebar from "./Components/Sidebar";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="md:flex">
+      <Sidebar />
+
+      <div className="md:mx-5 mx-1">
+        <div className="mb-5">
+          <Header />
+        </div>
+        <div className="md:flex">
+          <div>
+            <div className="md:w-[500px] lg:w-[750px] w-full mb-5">
+              <Jumbotron />
+
+              <LineChart />
+            </div>
+          </div>
+          <div className="w-full">
+            <div className="mb-3 md:mb-[50px]">
+              <HorizentalGraph />
+            </div>
+            <div>
+              <VerticalGraph />
+            </div>
+          </div>
+        </div>
+        <Cards />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
